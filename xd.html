@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="xd.css">
+  <link rel="stylesheet" href="cheatsheet.css">
+  <link rel="stylesheet" href="lib/css/onsen-css-components.css">
+  <link rel="stylesheet" href="lib/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="lib/js/onsenui.js"></script>
+  <script src="lib/js/onsenui.min.js"></script>
+  <script src="xd.js"></script>
+</head>
+
+<ons-page>
+  <ons-toolbar>
+    <div class="center">
+      <ons-segment id="segment" tabbar-id="tabbar" style="width: 180px">
+        <button>Hello</button>
+        <button>Split</button>
+        <button>Pay</button>
+      </ons-segment>
+    </div>
+  </ons-toolbar>
+
+  <ons-tabbar id="tabbar">
+    <ons-tab page="page1.html" active></ons-tab>
+    <ons-tab page="page2.html"></ons-tab>
+    <ons-tab page="page3.html"></ons-tab>
+  </ons-tabbar>
+</ons-page>
+
+<template id="page1.html">
+  <ons-page>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        <img src="https://cdn.dribbble.com/users/7455/screenshots/1326644/15-100-logos.png" alt="Split Bill">
+    </p>
+    <p id= "slogan">Welcome to Bill Splitter!</p>
+
+  </ons-page>
+</template>
+
+<template id="page2.html">
+  <ons-page>
+</div >
+</ons-toolbar>
+<p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+<div class="center">
+  <div class="main">
+<h2 id="billheader">Bill Splitter</h2>
+<form id="tipCalcForm">
+<div id="Submit">
+Initial Bill: $<input type="number" id="preTipBill" placeholder="Initial Total" value="" required>
+</div>
+<div id="Total"> 
+Tip amount: <input type="number" id="tipPercent" min="0" max="100" value="" required>%
+</div>
+<div id="Tip">
+Split the bill with <input type="number" id="splitBetween" min="1" max="100" value=""> other people.
+</div>
+<div>
+<input type="button" value="Calculate" onclick="tipCalc()" id="calcbutton">
+<input type="reset" value="Reset" id="reset">
+</div>
+<div>
+<p id="output"></p>
+</div>
+</form>
+</div>
+</p>
+  </ons-page>
+</template>
+
+<template id="page3.html">
+  <ons-page>
+    <section class="container" style="text-align: center; padding-top: 100px;">
+        <div class="theCard">
+          <figure class="theCardFront">
+            <div class="instructionsCards">
+                <div class="variousCards">
+                    <img id="visa" src="https://dharmamerchantservices.com/wp-content/uploads/2017/06/visa.jpg"/>
+                    <img id="paypal" src="https://yt3.ggpht.com/a/AGF-l7_m7an79KW5UfiqIh0QIbqKsoJ89W224PovWQ=s900-mo-c-c0xffffffff-rj-k-no"/>
+                    <img id="mastercard" src="https://cdn.vox-cdn.com/thumbor/GkcUPA-j2Lv9hGqJ53NDyjTLVoM=/0x0:1000x793/1200x800/filters:focal(420x317:580x477)/cdn.vox-cdn.com/uploads/chorus_image/image/62856083/mastercard_logo.1547665179.png"/>
+                    <img id="venmo" src="https://cdn1.venmo.com/production/images/favicon.ico"/>
+                </div>
+            </div>
+          <br class="clear" />
+          <div class="cardNumber">Card Number:<br/>
+              <input class="firstfour" placeholder="1111" maxlength="4"/>
+              <input placeholder="2222" maxlength="4" />
+              <input placeholder="3333" maxlength="4" />
+              <input placeholder="4444" maxlength="4" />
+          </div>
+          <div class="cardExpiration">Expiration Date:<br/>
+              <input class="month" placeholder="Mo" maxlength="2"/> / <input class="year" placeholder="Year" maxlength="4"/>
+          </div>
+          <div class="cardSecurity">Security Code:<br/>
+              <input class="csc" placeholder="CSC" maxlength="4"/>
+              <small><span class="tooltip">What's this?</span><span class="help">Security Code on the Back of Your Card</span></small>
+          </div>
+          <br class="clear">
+          <p style="text-align: center; margin: 5% 0;">
+            <ons-button class="pay" onclick="showTemplateDialog()">Pay Now</ons-button>
+          </p>
+          <template id="dialog.html">
+            <ons-dialog id="my-dialog">
+              <div style="text-align: center; padding: 10px;">
+                <p>
+                  This is a simple dialog!
+                </p>
+                <p>
+                  <ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+                </p>
+              </div>
+            </ons-dialog>
+          </template>
+        </figure>
+      </div>
+  </section>
+  </ons-page>
+</template>
